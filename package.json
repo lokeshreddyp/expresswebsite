@@ -1,0 +1,22 @@
+{
+  "name": "expresswebsite",
+  "version": "1.0.0",
+  "description": "a website using node,express,ejs,bootstrap",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lokeshreddyp/node_express_website.git"
+  },
+  "author": "Lokeshreddy Pothapu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lokeshreddyp/node_express_website/issues"
+  },
+  "homepage": "https://github.com/lokeshreddyp/node_express_website#readme"
+}
