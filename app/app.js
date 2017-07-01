@@ -9,10 +9,6 @@ app.use(require('./routes/index.js'));
 app.use(require('./routes/speakers.js'));
 
 
-
-
-
-
 //to start port 3000
 var server = app.listen('3000',function() {
 
