@@ -12,9 +12,9 @@ const router = express.Router();
 //root route
 router.get('/',function(req,res) {
 res.send(`
-
+<link rel="stylesheet" type="text/css" href="css/styling.css">
   <h1> Welcome to my website!!! </h1>
-
+<img src= "../images/misc/background.jpg" alt="backgroundimg" style="height:300px;">
   <p> Opps !! This page is under construction :( </p>
 
 `);

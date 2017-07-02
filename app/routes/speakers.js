@@ -13,6 +13,11 @@ router.get('/speakers', function(req,res) {
   allspeakers += `
 
   <h2> ${items.name} </h2>
+
+  <link rel="stylesheet" type="text/css" href="css/styling.css">
+
+  <img src= "/images/speakers/${items.shortname}_tn.jpg" alt="speakers" style="height:300px;">
+
   <p> ${items.summary} </p>
 
   `;
@@ -38,6 +43,13 @@ res.send( `
 <h1>Hey this is your requested speaker details!!</h1>
 
 <h2>Name is ${specid.name} </h2>
+
+<link rel="stylesheet" type="text/css" href="css/styling.css">
+
+<img src= "../images/speakers/${specid.shortname}_tn.jpg" alt="speakers id not found" style="height:300px;">
+
+
+
 <h3>Tittle is ${specid.title} </h3>
 <p> ${specid.summary} </p>
 

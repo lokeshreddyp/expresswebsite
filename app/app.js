@@ -8,6 +8,9 @@ var app = express();
 app.use(require('./routes/index.js'));
 app.use(require('./routes/speakers.js'));
 
+//to be available to any part of  app
+
+app.use(express.static('app/public'));
 
 //to start port 3000
 var server = app.listen('3000',function() {
