@@ -29,6 +29,7 @@ router.get('/speakers', function(req,res) {
   <h1>hey dude here are some speakers getting from json file!!</h1>
   ${allspeakers}
 
+  <script src="/reload/reload.js"></script>
     `);
 });
 
@@ -53,6 +54,8 @@ res.send( `
 <h3>Tittle is ${specid.title} </h3>
 <p> ${specid.summary} </p>
 
+
+<script src="/reload/reload.js"></script>
 `);
 
 });
