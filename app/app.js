@@ -16,6 +16,9 @@ app.set('view engine', 'ejs');
 app.set('views','app/views');
 
 
+//this variable can be accessed in all the views
+app.locals.siteTitle = 'Express Website';
+
 //setting the default port or any port
 const port = process.env.PORT || 3001;
 

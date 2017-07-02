@@ -6,31 +6,44 @@ const router = express.Router();
 
 //speakers route gets data from data.json file
 router.get('/speakers', function(req,res) {
-  var allspeakers = '';
-  //looping through speakers array and getting name and summary of all speakers using foreach
+  // var allspeakers = '';
+  // //looping through speakers array and getting name and summary of all speakers using foreach
+  // speakersjson.speakers.forEach(function(items) {
+  //   //console.log(speakersjson.speakers[0].name);
+  // allspeakers += `
+  //
+  // <h2> ${items.name} </h2>
+  //
+  // <link rel="stylesheet" type="text/css" href="css/styling.css">
+  //
+  // <img src= "/images/speakers/${items.shortname}_tn.jpg" alt="speakers" style="height:300px;">
+  //
+  // <p> ${items.summary} </p>
+  //
+  // `;
+  var artworkempty = [];
+var speakersarray = speakersjson.speakers;
   speakersjson.speakers.forEach(function(items) {
-    //console.log(speakersjson.speakers[0].name);
-  allspeakers += `
-
-  <h2> ${items.name} </h2>
-
-  <link rel="stylesheet" type="text/css" href="css/styling.css">
-
-  <img src= "/images/speakers/${items.shortname}_tn.jpg" alt="speakers" style="height:300px;">
-
-  <p> ${items.summary} </p>
-
-  `;
+    artworkempty = artworkempty.concat(items.artwork);
   });
 
-  //sending the response to route
-  res.send(`
+  //it will go to views folder and run index.ejs file
+    res.render('speakers' , {
+      pageTitle: 'Speakers',
+      artwork: artworkempty,
+      speakers: speakersarray,
+      pageID: 'speakers'
+    });
 
-  <h1>hey dude here are some speakers getting from json file!!</h1>
-  ${allspeakers}
 
-  <script src="/reload/reload.js"></script>
-    `);
+  // //sending the response to route
+  // res.send(`
+  //
+  // <h1>hey dude here are some speakers getting from json file!!</h1>
+  // ${allspeakers}
+  //
+  // <script src="/reload/reload.js"></script>
+  //   `);
 });
 
 

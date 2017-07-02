@@ -1,6 +1,8 @@
 
 const express = require('express');
 
+const speakersjson = require('../speakersdatajson/data.json');
+
 //to get all the methods of router from express use the below variable istead of app
 const router = express.Router();
 
@@ -12,8 +14,18 @@ const router = express.Router();
 //root route
 router.get('/',function(req,res) {
 
+var artworkempty = [];
+
+speakersjson.speakers.forEach(function(items) {
+  artworkempty = artworkempty.concat(items.artwork);
+});
+
 //it will go to views folder and run index.ejs file
-  res.render('index');
+  res.render('index' , {
+    pageTitle: 'Home',
+    artwork: artworkempty,
+    pageID: 'home'
+  });
 
 
 });
