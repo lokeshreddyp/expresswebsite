@@ -9,24 +9,41 @@
           <h5 class="speakerslist-name">with <a href="/speakers/<%= item.shortname %>"><%= item.name %></a></h5>
           <p class="speakerslist-info"><a href="/speakers/<%= item.shortname %>">
 
-
+<!-- to get image circled -->
             <% if (pageID == 'home') { %>
           <img class=" img-circle " src="/images/speakers/<%= item.shortname %>_tn.jpg" alt="Photo of name">
           <%    } %>
 
 
-
-              <% if (pageID == 'speakers') { %>
-            <img class="speakerslist-img img-circle pull-left" src="/images/speakers/<%= item.shortname %>_tn.jpg" alt="Photo of name">
+<!-- to get image responsive  -->
+              <% if (pageID == 'speakersid') { %>
+            <img class="speakerslist-img img-responsive pull-left" src="/images/speakers/<%= item.shortname %>.jpg" alt="Photo of name">
     <%    } %>
+
+
+
+                  <% if (pageID == 'speakers') { %>
+                <img class="speakerslist-img img-circle pull-left" src="/images/speakers/<%= item.shortname %>_tn.jpg" alt="Photo of name">
+        <%    } %>
 
 
 
           </a>
 </a>
+<!-- to parse html and avoid <p>
+ tags while printing use <%-  %>instead of <%= %>
+!-->
+
 
           <% if (pageID !== 'home') { %>
+  <% if (pageID == 'speakers') { %>
+
    <%= item.summary %>
+ <% }  else { %>
+
+
+   <%- item.description %>
+<% } %>
       <%    } %>
 
 

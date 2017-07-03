@@ -51,25 +51,26 @@ var speakersarray = speakersjson.speakers;
 //route to get specific speaker by id
 router.get('/speakers/:speakerid' , function(req,res) {
 
-var specid = speakersjson.speakers[req.params.speakerid];
 
-res.send( `
-<h1>Hey this is your requested speaker details!!</h1>
+  var artworkempty = [];
+var speakersarray = [];
 
-<h2>Name is ${specid.name} </h2>
+  speakersjson.speakers.forEach(function(items) {
+    if(items.shortname == req.params.speakerid) {
 
-<link rel="stylesheet" type="text/css" href="css/styling.css">
+speakersarray.push(items);
+        artworkempty = artworkempty.concat(items.artwork);
+    }
 
-<img src= "../images/speakers/${specid.shortname}_tn.jpg" alt="speakers id not found" style="height:300px;">
+  });
 
-
-
-<h3>Tittle is ${specid.title} </h3>
-<p> ${specid.summary} </p>
-
-
-<script src="/reload/reload.js"></script>
-`);
+  //it will go to views folder and run index.ejs file
+    res.render('speakers' , {
+      pageTitle: 'Speakersid',
+      artwork: artworkempty,
+      speakers: speakersarray,
+      pageID: 'speakersid'
+    });
 
 });
 

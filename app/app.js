@@ -16,6 +16,9 @@ app.set('view engine', 'ejs');
 app.set('views','app/views');
 
 
+//to get complte list of speakers in dropdown
+app.locals.allspeakers = speakersjson.speakers;
+
 //this variable can be accessed in all the views
 app.locals.siteTitle = 'Express Website';
 
