@@ -15,6 +15,7 @@ const router = express.Router();
 router.get('/',function(req,res) {
 
 var artworkempty = [];
+var speakersarray = speakersjson.speakers;
 
 speakersjson.speakers.forEach(function(items) {
   artworkempty = artworkempty.concat(items.artwork);
@@ -24,6 +25,7 @@ speakersjson.speakers.forEach(function(items) {
   res.render('index' , {
     pageTitle: 'Home',
     artwork: artworkempty,
+    speakers: speakersarray,
     pageID: 'home'
   });
 

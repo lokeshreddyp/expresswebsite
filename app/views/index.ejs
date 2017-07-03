@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <% include  partials/template/head.ejs %>
-  </head>
-  <body id="<%= pageID%>">
 
-    <header>
-    <% include partials/template/header.ejs %>
-    </header>
-    
+<head>
+  <% include  partials/template/head.ejs %>
+</head>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="maincontent">
-
-
+<body id="<%= pageID%>">
+  <% include partials/template/header.ejs %>
+    <% include partials/contents/speakerscontent.ejs %>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="maincontent">
   <% include partials/contents/maincontent.ejs %>
 
+            </div>
           </div>
-        </div><!-- primary -->
-        <aside class="col-sm-4">
+          <!-- primary -->
+          <aside class="col-sm-4">
 
-          <% include partials/contents/sidebarsarticle1.ejs %>
+            <% include partials/contents/sidebarsarticle1.ejs %>
 
-       <% include partials/contents/sidebarsarticle2.ejs %>
-        </aside><!-- secondary -->
+              <% include partials/contents/sidebarsarticle2.ejs %>
+          </aside>
+          <!-- secondary -->
+        </div>
       </div>
-    </div><!-- container -->
+      <!-- container -->
 
-  <% include partials/template/jsscripts.js %>
+      <% include partials/template/jsscripts.js %>
 
-  </body>
+</body>
+
 </html>
