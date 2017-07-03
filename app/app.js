@@ -8,6 +8,7 @@ var app = express();
 
 app.use(require('./routes/index.js'));
 app.use(require('./routes/speakers.js'));
+app.use(require('./routes/feedback.js'));
 
 //loading view engine
 app.set('view engine', 'ejs');
